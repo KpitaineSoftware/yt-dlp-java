@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.jfposton</groupId>
+    <groupId>com.kpitaine.os</groupId>
     <artifactId>yt-dlp-java</artifactId>
     <version>2.0.3</version>
     <packaging>jar</packaging>
 
     <name>Yt-Dlp wrapper</name>
     <description>Java wrapper for yt-dlp executable</description>
-    <url>https://github.com/jfposton/yt-dlp-java</url>
-
+    <url>https://github.com/KpitaineSoftware/yt-dlp-java</url>
+    <developers>
+        <developer>
+            <id>sapher</id>
+            <name>Xaser</name>
+            <roles>
+                <role>Initial developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>jfposton</id>
+            <name>Jonathan Poston</name>
+            <roles>
+                <role>initial developper</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>damiencuvillier</id>
+            <name>Damien Cuvillier</name>
+            <email>damien@gotan.io</email>
+            <url>https://damiencuvillier.com</url>
+            <roles>
+                <role>simple contributor, packager</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>ericledevedec</id>
+            <name>Eric Le Devedec</name>
+            <email>eric.ledevedec@kpitaine.com</email>
+            <url>https://kpitaine.com</url>
+            <roles>
+                <role>maintainer,developper</role>
+            </roles>
+        </developer>
+    </developers>
     <licenses>
         <license>
             <name>WTFPL 2.0</name>
@@ -18,16 +52,21 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
     <scm>
-        <url>https://github.com/jfposton/yt-dlp-java</url>
+        <connection>scm:git@github.com:KpitaineSoftware/yt-dlp-java.git</connection>
+        <url>scm:git@github.com:KpitaineSoftware/yt-dlp-java.git</url>
+        <developerConnection>scm:git:git@github.com:KpitaineSoftware/yt-dlp-java.git</developerConnection>
     </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/KpitaineSoftware/yt-dlp-java/issues</url>
+    </issueManagement>
 
     <distributionManagement>
         <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/jfposton/yt-dlp-java</url>
+            <id>io.gotan.repository</id>
+            <name>Gotan Libraries</name>
+            <url>https://repository.dev.gotan.io/repository/gotan.os/</url>
         </repository>
     </distributionManagement>
 
