@@ -1,13 +1,12 @@
 package com.jfposton.ytdlp;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-
-
-import org.junit.Test;
 
 import com.jfposton.ytdlp.mapper.VideoInfo;
+import org.junit.Test;
+
+import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 
 public class YtDlpResponseTest {
 

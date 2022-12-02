@@ -7,9 +7,10 @@ import com.jfposton.ytdlp.mapper.VideoThumbnail;
 import com.jfposton.ytdlp.utils.StreamGobbler;
 import com.jfposton.ytdlp.utils.StreamProcessExtractor;
 
+
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
 
@@ -84,11 +85,11 @@ public class YtDlp {
       throw new YtDlpException(e);
     }
 
-    InputStream outStream = process.getInputStream();
-    InputStream errStream = process.getErrorStream();
+    InputStreamReader outStream = new InputStreamReader(process.getInputStream());
+    InputStreamReader errStream = new InputStreamReader(process.getErrorStream());
 
     StreamProcessExtractor stdOutProcessor =
-        new StreamProcessExtractor(outBuffer, outStream, callback);
+            new StreamProcessExtractor(outBuffer, outStream, callback);
     StreamGobbler stdErrProcessor = new StreamGobbler(errBuffer, errStream);
 
     try {
@@ -96,7 +97,7 @@ public class YtDlp {
       stdErrProcessor.join();
       exitCode = process.waitFor();
     } catch (InterruptedException e) {
-
+      process.destroy();
       // process exited for some reason
       throw new YtDlpException(e);
     }

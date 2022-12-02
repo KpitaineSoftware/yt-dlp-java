@@ -1,26 +1,25 @@
 package com.jfposton.ytdlp.utils;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import com.jfposton.ytdlp.DownloadProgressCallback;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class StreamProcessExtractor extends Thread {
-  private static final String GROUP_PERCENT = "percent";
-  private static final String GROUP_MINUTES = "minutes";
-  private static final String GROUP_SECONDS = "seconds";
-  private InputStream stream;
+  private static final String GROUP_PROGRESS = "progress";
+  private InputStreamReader stream;
   private StringBuilder buffer;
   private final DownloadProgressCallback callback;
 
   private Pattern p =
       Pattern.compile(
-          "\\[download\\]\\s+(?<percent>\\d+\\.\\d)% .* ETA (?<minutes>\\d+):(?<seconds>\\d+)");
+          "(?<progress>\\[download\\]\\s+\\d+\\.\\d% .* ETA \\d+:\\d+)");
 
   public StreamProcessExtractor(
-      StringBuilder buffer, InputStream stream, DownloadProgressCallback callback) {
+          StringBuilder buffer, InputStreamReader stream, DownloadProgressCallback callback) {
     this.stream = stream;
     this.buffer = buffer;
     this.callback = callback;
@@ -49,9 +48,8 @@ public class StreamProcessExtractor extends Thread {
   private void processOutputLine(String line) {
     Matcher m = p.matcher(line);
     if (m.matches()) {
-      float progress = Float.parseFloat(m.group(GROUP_PERCENT));
-      long eta = convertToSeconds(m.group(GROUP_MINUTES), m.group(GROUP_SECONDS));
-      callback.onProgressUpdate(progress, eta);
+      String progress = m.group(GROUP_PROGRESS);
+      callback.onProgressUpdate(progress);
     }
   }
 
