@@ -1,6 +1,8 @@
 package com.jfposton.ytdlp;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
 
 /** YtDlp request */
@@ -85,7 +87,7 @@ public class YtDlpRequest {
     // Build options strings
     Iterator<Entry<String, String>> it = options.entrySet().iterator();
     while (it.hasNext()) {
-      Map.Entry<String, String> option = it.next();
+      Entry<String, String> option = it.next();
 
       String name = option.getKey();
       String value = option.getValue();
