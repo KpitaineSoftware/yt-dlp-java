@@ -1,14 +1,14 @@
 package com.jfposton.ytdlp.utils;
 
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class StreamGobbler extends Thread {
 
-  private InputStream stream;
+  private InputStreamReader stream;
   private StringBuilder buffer;
 
-  public StreamGobbler(StringBuilder buffer, InputStream stream) {
+  public StreamGobbler(StringBuilder buffer, InputStreamReader stream) {
     this.stream = stream;
     this.buffer = buffer;
     start();

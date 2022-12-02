@@ -1,13 +1,12 @@
 package com.jfposton.ytdlp;
 
-import java.util.List;
-
-import org.junit.Assert;
-import org.junit.Test;
-
 import com.jfposton.ytdlp.mapper.VideoFormat;
 import com.jfposton.ytdlp.mapper.VideoInfo;
 import com.jfposton.ytdlp.mapper.VideoThumbnail;
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.List;
 
 public class YtDlpTest {
 
