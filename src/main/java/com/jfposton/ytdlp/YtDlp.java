@@ -6,6 +6,8 @@ import com.jfposton.ytdlp.mapper.VideoInfo;
 import com.jfposton.ytdlp.mapper.VideoThumbnail;
 import com.jfposton.ytdlp.utils.StreamGobbler;
 import com.jfposton.ytdlp.utils.StreamProcessExtractor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 import java.io.File;
@@ -21,6 +23,8 @@ import java.util.Map;
  * href="https://github.com/yt-dlp/yt-dlp/blob/master/README.md">yt-dlp Documentation</a>
  */
 public class YtDlp {
+
+  private static final Logger logger = LoggerFactory.getLogger(YtDlp.class.getName());
 
   private YtDlp() {
     // Private constructor is here to encourage static usage of this class
@@ -62,6 +66,7 @@ public class YtDlp {
       throws YtDlpException {
 
     String command = buildCommand(request.buildOptions());
+    logger.info("command {}",command);
     String directory = request.getDirectory();
     Map<String, String> options = request.getOption();
 
