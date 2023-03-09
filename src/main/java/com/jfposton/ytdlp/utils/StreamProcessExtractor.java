@@ -16,7 +16,7 @@ public class StreamProcessExtractor extends Thread {
 
   private Pattern p =
       Pattern.compile(
-          "(?<progress>\\[download\\]\\s+\\d+\\.\\d% .* ETA \\d+:\\d+)");
+          "(?<progress>\\[download\\]\\s+\\d+\\.\\d+% .*)");
 
   public StreamProcessExtractor(
           StringBuilder buffer, InputStreamReader stream, DownloadProgressCallback callback) {

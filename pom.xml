@@ -5,7 +5,7 @@
 
     <groupId>com.kpitaine.os</groupId>
     <artifactId>yt-dlp-java</artifactId>
-    <version>2.0.5</version>
+    <version>2.0.6</version>
     <packaging>jar</packaging>
 
     <name>Yt-Dlp wrapper</name>
@@ -64,9 +64,9 @@
 
     <distributionManagement>
         <repository>
-            <id>io.gotan.repository</id>
-            <name>Gotan Libraries</name>
-            <url>https://repository.dev.gotan.io/repository/gotan.os/</url>
+            <id>com.kpitaine.os</id>
+            <name>Kpitaine Libraries</name>
+            <url>https://repository.kpitaine.com/repository/gotan.os/</url>
         </repository>
     </distributionManagement>
 
