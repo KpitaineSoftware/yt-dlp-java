@@ -64,9 +64,9 @@
 
     <distributionManagement>
         <repository>
-            <id>com.kpitaine.os</id>
+            <id>kpitaine-central</id>
             <name>Kpitaine Libraries</name>
-            <url>https://repository.kpitaine.com/repository/gotan.os/</url>
+            <url>https://repository.kpitaine.com/repository/maven-releases</url>
         </repository>
     </distributionManagement>
 
